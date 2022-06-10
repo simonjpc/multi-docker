@@ -21,6 +21,9 @@ jobs:
       - run: docker push simonpcpc/multi-server
       - run: docker push simonpcpc/multi-worker
 
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'
+        
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
         with:
