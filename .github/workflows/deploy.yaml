@@ -10,14 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t cygnetops/react-test -f ./client/Dockerfile.dev ./client
-      - run: docker run -e CI=true cygnetops/react-test npm test -- --coverage
-      - run: docker build -t cygnetops/multi-client ./client
-      - run: docker build -t cygnetops/multi-nginx ./nginx
-      - run: docker build -t cygnetops/multi-server ./server
-      - run: docker build -t cygnetops/multi-worker ./worker
-      - run: docker push cygnetops/multi-client
-      - run: docker push cygnetops/multi-nginx
-      - run: docker push cygnetops/multi-server
-      - run: docker push cygnetops/multi-worker
+      - run: docker build -t simonpcpc/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker run -e CI=true simonpcpc/react-test npm test -- --coverage
+      - run: docker build -t simonpcpc/multi-client ./client
+      - run: docker build -t simonpcpc/multi-nginx ./nginx
+      - run: docker build -t simonpcpc/multi-server ./server
+      - run: docker build -t simonpcpc/multi-worker ./worker
+      - run: docker push simonpcpc/multi-client
+      - run: docker push simonpcpc/multi-nginx
+      - run: docker push simonpcpc/multi-server
+      - run: docker push simonpcpc/multi-worker
  
