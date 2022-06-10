@@ -1,4 +1,3 @@
-language: generic
 name: Deploy Complex
 on:
   push:
